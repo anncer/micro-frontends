@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     cors: true,
     host: '0.0.0.0',
-    port: 7500
+    port: 7300
   },
   plugins: [vue(), vueJsx()],
   resolve: {
