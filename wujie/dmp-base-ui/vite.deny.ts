@@ -5,7 +5,7 @@ const basePath = process.cwd()+ '/.git'
 
 const fileNames = <any>[]
 
-const getFileNameFromDir = (path) => {
+const getFileNameFromDir = (path:any) => {
   const files = fs.readdirSync(path)
   files.forEach(f => {
     const p = path + '/' + f

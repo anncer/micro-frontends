@@ -1,18 +1,29 @@
 import type { RouteRecordRaw } from "vue-router";
 import Layout from "@/layout/index.vue";
+import Vue3 from "@/views/micro-app/Vue3.vue";
+import Vue3Sub from "@/views/micro-app/Vue3-sub.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "main",
-    component: Layout,
-     children: [
+    children: [
       {
         path: "/main",
         name: "main",
         component: () => import("@/views/main/index.vue")
       },
-     ]
+      {
+        path: "/vue3",
+        name: "vue3",
+        component: Vue3
+      },
+      {
+        path: "/vue3-sub/:path",
+        name: "vue3-sub",
+        component: Vue3Sub
+      }
+    ]
   },
   {
     path: "/401",
@@ -23,7 +34,7 @@ const routes: Array<RouteRecordRaw> = [
     path: "/404",
     name: "404",
     component: () => import("@/views/error-page/404.vue")
-  },
+  }
   // {
   //   path: "/login",
   //   component: () => import("@/views/login/index.vue")

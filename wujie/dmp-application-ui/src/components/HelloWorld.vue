@@ -1,40 +1,37 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
-</script>
-
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-    </h3>
+  <div class="hello">
+    <img alt="Vue logo" :src="logo" />
+    <h2 class="vue-title">{{ msg }}</h2>
   </div>
 </template>
 
+<script lang="ts" setup>
+
+import logo from '@/assets/logo.png';
+import {defineProps, toRefs } from 'vue'
+
+defineOptions({
+  name: 'HelloWorld',
+})
+
+const props = defineProps({msg: {type: String, default: ""}})
+
+const {msg} = toRefs(props)
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
+.hello {
   text-align: center;
+  margin-bottom: 50px;
 }
 
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.vue-title {
+  color: var(--host-color);
 }
 </style>

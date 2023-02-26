@@ -9,6 +9,8 @@ specifiers:
   '@types/nprogress': ^0.2.0
   '@types/sass': ^1.43.1
   '@types/whatwg-fetch': ^0.0.33
+  '@typescript-eslint/eslint-plugin': ^5.53.0
+  '@typescript-eslint/parser': ^5.53.0
   '@vitejs/plugin-legacy': ^4.0.1
   '@vitejs/plugin-vue': ^4.0.0
   '@vitejs/plugin-vue-jsx': ^3.0.0
@@ -68,6 +70,8 @@ devDependencies:
   '@types/nprogress': 0.2.0
   '@types/sass': 1.43.1
   '@types/whatwg-fetch': 0.0.33
+  '@typescript-eslint/eslint-plugin': 5.53.0_7sfk55rxbgpcllusxxcqlqfeme
+  '@typescript-eslint/parser': 5.53.0_ctjxwbjqmg5wmywbidv53geblq
   '@vitejs/plugin-legacy': 4.0.1_vite@4.1.4
   '@vitejs/plugin-vue': 4.0.0_vite@4.1.4+vue@3.2.47
   '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.1.4+vue@3.2.47
