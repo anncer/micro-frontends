@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+const basename = process.env.NODE_ENV === "production" ? "/demo-vue3/" : "";
+
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(basename),
   routes: [
     {
       path: '/',
