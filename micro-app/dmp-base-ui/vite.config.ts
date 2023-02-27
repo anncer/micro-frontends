@@ -16,10 +16,7 @@ export default defineConfig({
   server: {
     cors: true,
     host: '0.0.0.0',
-    port: 7300,
-    headers: {
-      "Access-Control-Allow-Origin": "*"
-    }
+    port: 7300
   },
    plugins: [
     vue(),

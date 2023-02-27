@@ -4,12 +4,12 @@ export default {
   port: 8000,
   cors: true,
   fs: {
-    strict: true,
+    strict: true
     // deny
   },
   headers: {
-    "Access-Control-Allow-Origin": "*",
-  },
+    "Access-Control-Allow-Origin": "*"
+  }
   // proxy: {
   //   '/api': {
   //     target: 'http://10.28.89.10:8765',
@@ -75,4 +75,4 @@ export default {
   //     rewrite: (path) => path.replace('', '')
   //   }
   // }
-}
+};
