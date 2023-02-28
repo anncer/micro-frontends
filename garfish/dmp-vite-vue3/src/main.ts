@@ -1,14 +1,17 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { h, createApp } from 'vue';
+import { vueBridge } from '@garfish/bridge-vue-v3';
+import App from './App.vue';
 
-import App from './App.vue'
-import router from './router'
+export const provider = vueBridge({
+  rootComponent: App,
+  appOptions: () => ({
+    el: '#app',
+    render: () => h(App),
+  }),
+});
 
-import './assets/main.css'
-
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+if (!window.__GARFISH__) {
+  // 非微前端环境直接运行
+  const vueInstance = createApp(App);
+  vueInstance.mount(document.querySelector('#app'));
+}

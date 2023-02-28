@@ -1,32 +1,56 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
+    <div>
+      <router-link to="/home">home </router-link><br />
+      <router-link to="/toDoList">toDoList</router-link><br />
+      <router-link to="/tasks">tasks</router-link><br />
+      <router-link to="/micro-app" v-if="GARFISH">Micro app</router-link><br />
+      <router-link to="/remote-component">Remote component</router-link><br />
+    </div>
+    <div class="view-content">
+      <router-view :basename="basename" />
+    </div>
   </div>
 </template>
 
-<style lang="scss">
+<script>
+export default {
+  name: "App",
+  props: ["basename"],
+  data() {
+    return {
+      GARFISH: window.__GARFISH__,
+    };
+  },
+};
+</script>
+
+<style lang="scss" scope="app-vue2">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
+  margin-top: 60px;
 
-nav {
-  padding: 30px;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
 
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    color: #42b983;
+    cursor: pointer;
+  }
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  a.router-link-active {
+    color: #ff4500;
   }
 }
 </style>

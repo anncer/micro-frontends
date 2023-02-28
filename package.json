@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "description": "A powerful micro front-end framework",
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "dev": "pnpm --parallel @garfish-dev/* run start"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "eslint --fix --config .eslintrc.js",
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "author": "bytedance",
+  "license": "MIT",
+  "version": "1.14.1",
+  "packageManager": "pnpm@7.6.0",
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "0.14.22"
+    }
+  }
+}
