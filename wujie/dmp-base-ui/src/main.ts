@@ -24,7 +24,7 @@ import "./styles/index.scss";
 import "virtual:svg-icons-register";
 
 import hostMap from "./micro/hostMap";
-import lifecycles from "./micro/lifecycle";
+import lifecycles from "./micro/lifecycledmpCliV3";
 // import plugins from "./micro/plugin";
 import credentialsFetch from "./micro/fetch";
 import WujieVue from "wujie-vue3";
@@ -72,7 +72,7 @@ const attrs = isProduction ? { src: hostMap("//localhost:8000/") } : {};
  */
 
 setupApp({
-  name: "vue3",
+  name: "dmpCliV3",
   url: hostMap("//localhost:7300/"),
   attrs,
   exec: true,
@@ -98,7 +98,7 @@ setupApp({
 if (window.localStorage.getItem("preload") !== "false") {
   if (window.Proxy) {
     const obj: preOptions = {
-      name: "vue3",
+      name: "dmpCliV3",
       url: hostMap("//localhost:7300/")
     };
     preloadApp(obj);

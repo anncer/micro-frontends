@@ -35,13 +35,13 @@ const current = router.currentRoute
 
 watch(current, () => {
   // console.log(router, 'router')
-  console.log(current.value, 'current')
-  window.$wujie?.bus.$emit("sub-route-change", "vue3", router.currentRoute.value.path);
+  console.log(current.value, 'dmpCliV3Sub')
+  window.$wujie?.bus.$emit("dmp-cli-v3-sub", "dmpCliV3", router.currentRoute.value.path);
 })
 
 onMounted(() => {
-  console.log(window.$wujie, 'onMounted')
-  window.$wujie?.bus.$on("vue3-router-change", (path: any) => router.push(path));
+  console.log(window.$wujie, 'dmp-cli-v3')
+  window.$wujie?.bus.$on("dmp-cli-v3", (path: any) => router.push(path));
 })
 // watch: {
 //   // 在 vite-sub 路由下主动告知主应用路由跳转，主应用也跳到相应路由高亮菜单栏

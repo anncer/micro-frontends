@@ -14,13 +14,13 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/main/index.vue")
       },
       {
-        path: "/vue3",
-        name: "vue3",
+        path: "/dmpCliV3",
+        name: "dmpCliV3",
         component: Vue3
       },
       {
-        path: "/vue3-sub/:path",
-        name: "vue3-sub",
+        path: "/dmpCliV3Sub/:path",
+        name: "dmpCliV3Sub",
         component: Vue3Sub
       }
     ]
