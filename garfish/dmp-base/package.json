@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
+    "@garfish/css-scope": "^1.14.1",
+    "@garfish/es-module": "^1.14.1",
     "composite-ware": "^0.0.98",
     "core-js": "^3.29.0",
     "element-plus": "^2.2.32",

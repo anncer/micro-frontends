@@ -1,25 +1,39 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+import type { RouteRecordRaw } from 'vue-router'
+// import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
+import Layout from "../layout/index.vue";
+const routes: RouteRecordRaw[] =  [
+  {
+    path: "/",
+    name: "index",
+    component: Layout,
+    children: [
       {
-      path: '/layout',
-      name: 'layout',
-      component: () => import('../layout/index.vue'), // 注意这里要带上 文件后缀.vue
-      // component: () => import('@/layout/index.vue'), // 注意这里要带上 文件后缀.vue
-      meta: { title: '首页' }
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
-  ]
+        path: "/index",
+        name: "index",
+        component: AboutView
+      },
+      // {
+      //   path: "/dmpCliV3",
+      //   name: "dmpCliV3",
+      // },
+      // {
+      //   path: "/dmpCliV3Sub/:path",
+      //   name: "dmpCliV3Sub",
+      // }
+    ]
+  },
+  // {
+  //   path: "/login",
+  //   component: () => import("@/views/login/index.vue")
+  // }
+];
+
+
+const index = createRouter({
+  history: createWebHistory(),
+  routes
 })
 
-export default router
+export default index
