@@ -1,5 +1,14 @@
 export default  [
   {
+    key: 'main',
+    path: '/main',
+    title: '【主应用】vue3',
+    children: [
+      { path: '/index', title: '首页', key: 'main-home' },
+      { path: '/home', title: 'home' , key: 'main-todo'},
+    ],
+  },
+  {
     key: 'vue3',
     path: '/vue3',
     title: '【子应用】vue3',

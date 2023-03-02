@@ -2,8 +2,8 @@ import type GarfishInstance from 'garfish';
 import {portMap} from '../../utils';
 
 export const loadApp = 'loadApp';
-export const basename = 'main';
-export const prefixCls = 'main-app';
+export const basename = '';
+export const prefixCls = '';
 
 type AppInfo = NonNullable<Parameters<typeof GarfishInstance.run>[0]>['apps'];
 

@@ -19,6 +19,26 @@ module.exports = defineConfig({
       },
     };
   },
+  module: {
+    rules: [
+      {
+        test: /\.less$/i,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          {
+            loader: "sass-loader",
+            options: {
+              modifyVars: {
+                "@ant-prefix": "child-cli", // 定制自己的前缀
+              },
+              javascriptEnabled: true,
+            },
+          },
+        ],
+      },
+    ],
+  },
   publicPath,
   devServer: {
     hot: true,
