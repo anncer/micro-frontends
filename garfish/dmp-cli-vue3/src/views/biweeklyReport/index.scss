@@ -1,0 +1,279 @@
+.biweekly-head {
+  width: 100%;
+  height: 120px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: 20px;
+
+}
+
+.biweekly-link{
+  font-size: 14px;
+  color: #0052CB;
+  cursor: pointer;
+}
+.biweekly-title {
+  border-bottom: 1px solid #ECEEF3;
+  padding-bottom: 12px;
+  font-size: 14px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: bolder;
+  color: #172B4C;
+  line-height: 20px;
+}
+
+.biweekly-search{
+  padding-top: 16px;
+  display: flex
+}
+
+.biweekly-s-item{
+  flex: 1;
+  text-align: center;
+  flex-wrap: wrap;
+  .el-select{
+    width: 82px;
+    height: 32px;
+    border-radius: 4px;
+    margin:0 6px;
+    border: 1px solid rgba(192, 201, 217, 0.3);
+  }
+}
+
+.biweekly-content{
+  padding: 20px;
+  margin-top: 10px;
+  background: #FFFFFF;
+}
+
+.biweekly-content :deep(.el-table__header) {
+  th.el-table__cell{
+    background: #F8F9FB !important;
+  }
+}
+
+.biweekly-content :deep(.el-table--border .el-table__cell) {
+  border-right: 1px solid #ECEEF3 !important;
+}
+
+.biweekly-content :deep(.el-table td.el-table__cell) {
+  border-bottom: 1px solid #ECEEF3 !important;
+}
+
+.biweekly-content :deep(.el-table--border tr:first-child td:first-child){
+  border-left: 1px solid #ECEEF3 !important;
+
+}
+
+.biweekly-table-b :deep(.el-table--border th:first-child),
+.biweekly-table-b :deep(.el-table--border td:first-child) {
+  border-right: none !important;
+  .cell {
+      padding-right: 2px;
+    }
+  .el-checkbox{
+    float: right;
+  }
+}
+
+.biweekly-content :deep(.el-table th.el-table__cell.is-leaf) {
+  border-bottom: 1px solid #ECEEF3 !important;
+}
+.biweekly-content :deep(.ce-table){
+  .el-table__border-left-patch,
+  .el-table--border .el-table__inner-wrapper::after,
+  .el-table--border::after,
+  .el-table--border::before,
+  .el-table__inner-wrapper::before {
+    background-color: #ECEEF3 !important
+  }
+}
+
+.biweekly-content :deep(.el-table) {
+  color: #8E9AAE;
+  thead{
+    font-weight: 500;
+    color: #172B4C;
+  }
+}
+
+.biweekly-content :deep(.el-checkbox__input.is-checked .el-checkbox__inner){
+  background-color: #0052CB !important;
+  border-color: #0052CB !important;
+}
+.biweekly-content :deep(.el-checkbox__input.is-indeterminate .el-checkbox__inner) {
+  background-color: #0052CB !important;
+  border-color: #0052CB !important;
+}
+
+.biweekly-c-title{
+  margin-bottom: 14px;
+}
+
+
+// 按钮
+
+.biweekly-btn{
+  width: 90px;
+  height: 32px;
+  background: rgba(0, 82, 203, 0.1);
+  border-radius: 2px;
+  border: 1px solid rgba(0, 82, 203, 0.5);
+  cursor: pointer;
+  &:hover{
+    background: rgba(66, 135, 239, 0.2);
+  }
+}
+
+.biweekly-btn-inner{
+  height: 20px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0052CB;
+  line-height: 20px;
+}
+
+.biweekly-btn-dark{
+  background:#0052CB;
+  border-color:#0052CB;
+  &:hover {
+    background: #035bdc;
+  }
+  .biweekly-btn-inner{
+    color: #fff
+  }
+}
+// 表格内部的按钮
+.biweekly-t-btns{
+  display: flex;
+}
+.biweekly-t-btn{
+  flex: 1;
+  margin-right: 10px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0052CB;
+  cursor: pointer;
+  &.disabled {
+    color: #8E9AAE;
+    cursor: default;
+  }
+}
+.biweekly-content :deep(.el-upload) {
+  &:focus{
+    color: #0052CB !important;
+  }
+}
+
+.unable-box{
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: scroll;
+  .unable-box-item{
+    font-size: 14px;
+    line-height: 40px;
+    color: #172B4C;
+    display: flex;
+  }
+  .unable-i-h{
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+  }
+  .unable-i-c{
+    // margin-left: 10px;
+    flex: 1;
+    text-align: left;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.biweekly-s-l, .biweekly-s-r{
+  flex: unset;
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  i {
+    float: left;
+    margin-top: 9px;
+  }
+}
+.biweekly-s-l{
+  margin-right: 50px;
+}
+.biweekly-s-r {
+  margin-left: 50px;
+  i {
+      float: right;
+    }
+}
+
+
+.biweekly-back{
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  height: 90px;
+  line-height: 90px;
+}
+
+.biweekly-back-btn{
+  display: inline-block;
+  width: 90px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0052CB;
+  background: #E5EDF9;
+  border-radius: 2px;
+  border: 1px solid #729FE2;
+  cursor: pointer;
+  &:hover{
+    background: #eaeff7;
+  }
+}
+
+.biweekly-view{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .biweekly-content{
+    flex: 1;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+  }
+  .ce-table{
+    flex: 1;
+  }
+  .biweekly-back{
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+.biweekly-branched{
+  .biweekly-c-title{
+    margin-top: 10px;
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 0;
+    background-color: #fff;
+  }
+  .biweekly-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

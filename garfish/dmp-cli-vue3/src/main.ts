@@ -4,7 +4,15 @@ import { stateSymbol, createState } from "./store";
 import App from "./App.vue";
 import ToDoList from "./components/todo.vue";
 import HelloGarfish from "./components/HelloGarfish.vue";
+
+import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+import elementPlus from "element-plus";
+import zhCn from 'element-plus/lib/locale/lang/zh-cn'
+
 import { vueBridge } from "@garfish/bridge-vue-v3";
+import compositeWare from "composite-ware";
+import "element-plus/dist/index.css";
+import 'composite-ware/theme-chalk/index.css'
 
 const routes = [
   { path: "/home", component: HelloGarfish },
@@ -31,13 +39,18 @@ export const provider = vueBridge({
   // appInfo
   handleInstance: (vueInstance, { basename, dom, appName, props }) => {
     console.log(basename, dom, appName, props);
+    for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+      vueInstance.component(key, component);
+    }
     vueInstance.use(newRouter(basename));
     vueInstance.provide(stateSymbol, createState());
+    vueInstance.use(elementPlus, {locale: zhCn});
+    vueInstance.use(compositeWare);
   },
 });
 
-// export function provider({ dom, basename }) {
-//   let app = null;
+// export function provider({ dom:any, basename:any }) {
+//   let app:any = null;
 //   return {
 //     render() {
 //       app = createApp(App);
@@ -65,7 +78,12 @@ export const provider = vueBridge({
 if (!window.__GARFISH__) {
   const router = newRouter("/");
   const app = createApp(App);
+  for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component);
+  }
   app.provide(stateSymbol, createState());
   app.use(router);
+  app.use(elementPlus, {locale: zhCn});
+  app.use(compositeWare);
   app.mount("#app");
 }
