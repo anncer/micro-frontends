@@ -14,6 +14,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "@garfish/bridge-vue-v3": "^1.14.1",
+    "axios": "0.27.2",
     "composite-ware": "^0.0.98",
     "core-js": "^3.29.0",
     "element-plus": "^2.2.32",

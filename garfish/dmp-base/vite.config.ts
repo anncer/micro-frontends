@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -8,7 +7,6 @@ import { portMap } from "../utils";
 
 const appName = 'dev/main';
 const port = portMap[appName].port;
-
 //@ts-ignore
 export default ({ mode }) => {
   process.env = {
@@ -26,6 +24,18 @@ export default ({ mode }) => {
       port,
       cors: true,
       origin: `http://localhost:${port}`,
+      proxy: {
+        '/api': {
+          target: 'http://11.11.141.59:30002/',
+          changeOrigin: true,
+        }
+      }
+      // proxy: {
+      // "/api": {
+      //     target: "http://11.11.141.59:30002/",
+      //     changeOrigin: true,
+      //   },
+      // },
     },
     plugins: [vue(), vueJsx()],
   });

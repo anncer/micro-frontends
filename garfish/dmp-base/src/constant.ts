@@ -29,5 +29,12 @@ export const localApps: AppInfo = [
     name: 'vite',
     activeWhen: '/vite',
     entry: getProxyHost('dev/vite'),
+    sandbox: false
+  },
+  {
+    name: 'vit2',
+    activeWhen: '/vit2',
+    entry: getProxyHost('dev/vit2'),
+    sandbox: false
   },
 ];

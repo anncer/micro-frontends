@@ -11,7 +11,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "@garfish/bridge-vue-v3": "^1.14.1",
-    "axios": "^1.3.4",
+    "axios": "^0.27.2",
     "composite-ware": "^0.0.98",
     "core-js": "^3.8.3",
     "element-plus": "^2.2.32",
@@ -66,8 +66,5 @@
   ],
   "gitHooks": {
     "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": "vue-cli-service lint"
   }
 }

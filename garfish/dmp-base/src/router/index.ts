@@ -25,6 +25,16 @@ const routes: RouteRecordRaw[] =  [
         name: "vue3App",
         path: 'vue3/:path',
         component: MicroApps
+      },
+      {
+        name: "viteApp",
+        path: 'vite/:path',
+        component: MicroApps
+      },
+      {
+        name: "vit2App",
+        path: 'vit2/:path',
+        component: MicroApps
       }
     ],
   },

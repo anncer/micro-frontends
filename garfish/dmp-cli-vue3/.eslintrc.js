@@ -1,17 +1,28 @@
 module.exports = {
-  parserOptions: {
-    sourceType: "module"
-  },
   root: true,
   env: {
     node: true,
   },
-  plugins: [
-    'html'
+  parser: "vue-eslint-parser",
+  parserOptions: {
+    parser: "@typescript-eslint/parser",
+    sourceType: "module",
+    ecmaVersion: 2020,
+    jsxPragma: "React",
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  plugins: ["@typescript-eslint", "prettier", "vue"],
+  extends: [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended",
+    "plugin:prettier/recommended",
   ],
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "vue/multi-word-component-names": "off",
     camelcase: 2, // 强制驼峰法命名

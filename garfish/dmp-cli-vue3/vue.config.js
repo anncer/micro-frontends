@@ -1,10 +1,13 @@
-import path from "path";
-const webpack = require('webpack');
+const path = require("path");
 const { defineConfig } = require("@vue/cli-service");
 const appName = "dev/vue3";
 const { getPublicPath, getPort } = require("../util");
 const port = getPort(appName);
 const publicPath = getPublicPath(appName);
+
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -20,19 +23,20 @@ module.exports = defineConfig({
         libraryTarget: "umd",
         globalObject: "window",
       },
+      devtool: process.env.NODE_ENV === "development" ? "source-map" : "",
+      resolve: {
+        alias: {
+          "@": resolve("src"),
+        },
+      },
     };
   },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
-  },
-  plugin: [
-    // 保证错误堆栈信息及 sourcemap 行列信息正确
-    new webpack.BannerPlugin({
-      banner: 'Micro front-end',
-    }),
-  ],
+  // plugin: [
+  //   // 保证错误堆栈信息及 sourcemap 行列信息正确
+  //   new webpack.BannerPlugin({
+  //     banner: 'Micro front-end',
+  //   }),
+  // ],
   publicPath,
   devServer: {
     hot: true,
@@ -42,6 +46,12 @@ module.exports = defineConfig({
     allowedHosts: ["all"],
     headers: {
       "Access-Control-Allow-Origin": "*",
+    },
+    proxy: {
+      "/api": {
+        target: "http://11.11.141.59:30002/",
+        changeOrigin: true,
+      },
     },
   },
 });

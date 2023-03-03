@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 enum CacheTe {
   local = "localStorage",
   session = "sessionStorage",
-  cookie = "cookie"
+  cookie = "cookie",
 }
 
 class LocalCache {

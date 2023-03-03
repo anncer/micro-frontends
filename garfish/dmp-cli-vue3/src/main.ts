@@ -2,17 +2,17 @@ import { h, createApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 import { stateSymbol, createState } from "./store";
 import App from "./App.vue";
-import ToDoList from "./components/todo.vue";
-import HelloGarfish from "./components/HelloGarfish.vue";
+// import routes from "./router";
 
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import elementPlus from "element-plus";
-import zhCn from 'element-plus/lib/locale/lang/zh-cn'
-
+import zhCn from "element-plus/lib/locale/lang/zh-cn";
+import ToDoList from "./components/todo.vue";
+import HelloGarfish from "./components/HelloGarfish.vue";
 import { vueBridge } from "@garfish/bridge-vue-v3";
 import compositeWare from "composite-ware";
 import "element-plus/dist/index.css";
-import 'composite-ware/theme-chalk/index.css'
+import "composite-ware/theme-chalk/index.css";
 
 const routes = [
   { path: "/home", component: HelloGarfish },
@@ -44,7 +44,7 @@ export const provider = vueBridge({
     }
     vueInstance.use(newRouter(basename));
     vueInstance.provide(stateSymbol, createState());
-    vueInstance.use(elementPlus, {locale: zhCn});
+    vueInstance.use(elementPlus, { locale: zhCn });
     vueInstance.use(compositeWare);
   },
 });
@@ -83,7 +83,7 @@ if (!window.__GARFISH__) {
   }
   app.provide(stateSymbol, createState());
   app.use(router);
-  app.use(elementPlus, {locale: zhCn});
+  app.use(elementPlus, { locale: zhCn });
   app.use(compositeWare);
   app.mount("#app");
 }

@@ -3,7 +3,6 @@ import axios from "axios";
 import type { AxiosInstance } from "axios";
 import type { GlobalRequestInterceptors, GlobalRequestConfig } from "./types";
 import { ElLoading } from "element-plus";
-import router from '@/router';
 
 const DEFAULT_LOADING = false;
 class GlobalRequest {
@@ -26,7 +25,7 @@ class GlobalRequest {
           this.loadingComponent = ElLoading.service({
             lock: true,
             text: "正在请求数据...",
-            fullscreen: true
+            fullscreen: true,
           });
         }
         return config;
@@ -47,7 +46,7 @@ class GlobalRequest {
         }
         const status = Number(data.code);
         // 可以通过的接口状态码
-        const successStatus = [20000, 200, 50000, 40000]
+        const successStatus = [20000, 200, 50000, 40000];
 
         if (successStatus.includes(status)) {
           return data;
@@ -58,14 +57,14 @@ class GlobalRequest {
       },
       (error) => {
         this.loadingComponent?.close();
-        const errorStatus = Number(error.response.status)
+        const errorStatus = Number(error.response.status);
 
-        if (errorStatus === 404 ) {
+        if (errorStatus === 404) {
           // router.push({path: '/404'})
-          console.log(errorStatus, 'errorStatus')
-        } else if (errorStatus === 401 ) {
+          console.log(errorStatus, "errorStatus");
+        } else if (errorStatus === 401) {
           // router.push({path: '/401'})
-          console.log(errorStatus, 'errorStatus')
+          console.log(errorStatus, "errorStatus");
         }
         return Promise.reject(error);
       }
