@@ -24,7 +24,7 @@ import "./styles/index.scss";
 import "virtual:svg-icons-register";
 
 import hostMap from "./micro/hostMap";
-import lifecycles from "./micro/lifecycledmpCliV3";
+import lifecycles from "./micro/lifecycle";
 // import plugins from "./micro/plugin";
 import credentialsFetch from "./micro/fetch";
 import WujieVue from "wujie-vue3";
